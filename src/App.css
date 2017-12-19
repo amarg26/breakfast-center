@@ -1,0 +1,73 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  //background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+
+
+/*my css*/
+h3,li{ list-style: none;color: #fff; }
+
+/*.table>thead>tr>th,td{color: #fff; }*/
+
+p{color: #fff;}
+
+.total{color: #fff;}
+.totalModal{color: #000}
+
+#table{color: #fff; }
+
+.confrim {margin-top: 35px;
+    border-color: #fff !important;
+    background-color: transparent !important;
+    color: #fff !important;}
+
+.confrim:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.confrim:focus{ background-color: transparent;border-color: #fff;color: #fff;} 
+
+.closeModal{margin-right: 250px}
+
+.enter{
+ color:#fff !important;
+background-color:transparent;
+}
+
+.enter{
+ color:#fff ;
+border-color:#fff;
+background-color: transparent !important;
+color: #fff !important;
+}
+
+.enter:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.enter:active:hover{
+   color: #fff;
+    background-color: transparent;    
+}
+
+.enter:focus{ background-color: transparent;border-color: #fff;color: #fff;} 
