@@ -1,18 +1,19 @@
 .App {
   text-align: center;
+  //margin-top: 170px;
 }
 
 
 .App-header {
-  //background-color: #222;
-  height: 150px;
+  //background-color: #fff;
+  height: 110px;
   padding: 20px;
   color: white;
 }
 
-.App-title {
+/*.App-title {
   font-size: 1.5em;
-}
+}*/
 
 .App-intro {
   font-size: large;
@@ -21,16 +22,34 @@
 
 
 /*my css*/
-h3,li{ list-style: none;color: #fff; }
 
-/*.table>thead>tr>th,td{color: #fff; }*/
+
+
+@font-face {
+font-family: "Signika-Bold.ttf";
+src: url("./fonts/Signika-Bold.ttf");
+
+}
+
+.form-control{color: #fff}
+
+
+h3,li{ list-style: none; color: #fff;}
+
+
+.form-control{
+
+  background-color: transparent;
+}
+
+.table>thead>tr>th,td{color: #fff; }
 
 p{color: #fff;}
 
 .total{color: #fff;}
 .totalModal{color: #000}
 
-#table{color: #fff; }
+#table{color: #000; }
 
 .confrim {margin-top: 35px;
     border-color: #fff !important;
@@ -43,7 +62,8 @@ p{color: #fff;}
     border-color: #fff;
 }
 
-.confrim:focus{ background-color: transparent;border-color: #fff;color: #fff;} 
+.confrim:focus{ background-color: transparent;
+border-color: #fff;color: #fff;} 
 
 .closeModal{margin-right: 250px}
 
@@ -66,8 +86,14 @@ color: #fff !important;
 }
 
 .enter:active:hover{
-   color: #fff;
+  color: #fff;
     background-color: transparent;    
 }
 
-.enter:focus{ background-color: transparent;border-color: #fff;color: #fff;} 
+.enter:focus{ background-color: transparent;
+border-color: #fff;color: #fff;} 
+
+
+.modal-content,.modal-body,.table-responsive{
+  color: #000;
+}

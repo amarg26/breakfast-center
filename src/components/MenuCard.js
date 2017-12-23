@@ -405,10 +405,10 @@ state = {
                   <tbody>
               {selectedItems.map((item, i) => (
                 
-                <tr key={i}>
-                 <td>{item.name}</td>
-                 <td>{item.cost}&nbsp;<i className="fa fa-inr"></i></td>
-                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.quantity}</td> 
+                <tr key={i} >
+                 <td style={{ color: "#000" }}>{item.name}</td>
+                 <td style={{ color: "#000" }}>{item.cost}&nbsp;<i className="fa fa-inr"></i></td>
+                 <td style={{ color: "#000" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.quantity}</td> 
                 </tr>
                 
               ))}
