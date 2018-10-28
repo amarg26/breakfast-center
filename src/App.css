@@ -1,94 +1,122 @@
 .App {
   text-align: center;
-  //margin-top: 170px;
 }
 
 .App-header {
-  //background-color: #fff;
   height: 110px;
   padding: 20px;
   color: white;
 }
 
-
 .App-intro {
   font-size: large;
 }
 
-
 /*my css*/
 
+/* @font-face {
+  font-family: "Signika-Bold.ttf";
+  src: url("./fonts/Signika-Bold.ttf");
+} */
 
-
-@font-face {
-font-family: "Signika-Bold.ttf";
-src: url("./fonts/Signika-Bold.ttf");
-
+.form-control {
+  color: #fff;
 }
 
-.form-control{color: #fff}
+h3,
+li {
+  list-style: none;
+  color: #fff;
+}
 
-
-h3,li{ list-style: none; color: #fff;}
-
-
-.form-control{
-
+ul {
+  padding-left: 0;
+}
+.form-control {
   background-color: transparent;
 }
 
-.table>thead>tr>th,td{color: #fff; }
+th{color: #fff;}
 
-p{color: #fff;}
+.table > thead > tr > th,
+td {
+  color: #fff;
+}
 
-.total{color: #fff;}
-.totalModal{color: #000}
+p {
+  color: #fff;
+}
 
-#table{color: #000; }
+.total {
+  color: #fff;
+}
+.totalModal {
+  color: #000;
+}
 
-.confrim {margin-top: 35px;
-    border-color: #fff !important;
-    background-color: transparent !important;
-    color: #fff !important;}
+ #table>th {
+  color: #000;
+}
+
+.confrim {
+  margin-top: 35px;
+  border-color: #fff !important;
+  background-color: transparent !important;
+  color: #fff !important;
+}
 
 .confrim:hover {
-    color: #fff;
-    background-color: transparent;
-    border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
 }
 
-.confrim:focus{ background-color: transparent;
-border-color: #fff;color: #fff;} 
-
-.closeModal{margin-right: 250px}
-
-.enter{
- color:#fff !important;
-background-color:transparent;
+.confrim:focus {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
 }
 
-.enter{
- color:#fff ;
-border-color:#fff;
-background-color: transparent !important;
-color: #fff !important;
+.closeModal {
+  margin-right: 250px;
+}
+
+.enter {
+  color: #fff !important;
+  background-color: transparent;
+}
+
+.enter {
+  color: #fff;
+  border-color: #fff;
+  background-color: transparent !important;
 }
 
 .enter:hover {
-    color: #fff;
-    background-color: transparent;
-    border-color: #fff;
-}
-
-.enter:active:hover{
   color: #fff;
-    background-color: transparent;    
+  background-color: transparent;
+  border-color: #fff;
 }
 
-.enter:focus{ background-color: transparent;
-border-color: #fff;color: #fff;} 
+.enter:active:hover {
+  color: #fff;
+  background-color: transparent;
+}
 
+.enter:focus {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
 
-.modal-content,.modal-body,.table-responsive{
+.modal-content,
+.modal-body,
+.table-responsive {
   color: #000;
+}
+
+@media only screen and (max-width: 425px) {
+  h1 {
+    font-size: 25px;
+  }
 }

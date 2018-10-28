@@ -6,23 +6,15 @@ import { Switch } from "react-router";
 import MenuCard from "./components/MenuCard";
 import ComponentWithFormOnly from "./components/ComponentWithFormOnly";
 
-import {
-  Row,
-  Col,
-  Grid
-} from "react-bootstrap";
 
 class CustomerForm extends Component {
-  state = {
-      value: ""
-    };
+  state = { value: "" };
 
   handleChange = event => {
     this.setState({ value: event.target.value });
   }
 
   handleSubmit =event => {
-
     if (this.state.value === "") {
       alert("please enter name");
     } else {
@@ -34,9 +26,9 @@ class CustomerForm extends Component {
 
   render() {
     return (
-      <Grid>
-       <Row>
-       <Col xs={12}>
+      <section className="container">
+       <section className="row">
+       <section className="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <header className="App-header">
           <h1 className="App-title">Welcome to Breakfast Center</h1>
         </header>
@@ -60,9 +52,9 @@ class CustomerForm extends Component {
             />
           </Switch>
         </Router>
-        </Col>
-        </Row>
-      </Grid>
+        </section>
+        </section>
+      </section>
     );
   }
 }

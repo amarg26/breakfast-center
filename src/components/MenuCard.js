@@ -1,12 +1,4 @@
 import React from "react";
-import {
-  Row,
-  Col,
-  Button,
-  Modal,
-  Table
-} from "react-bootstrap";
-
 import "../App.css";
 
 const MorningDrinks = [
@@ -66,9 +58,7 @@ const MaharashtraDishes = [
     name: "Poha",
     cost: 15
   }
-
 ];
-
 
 const sIndianDishes = [
   {
@@ -101,7 +91,6 @@ const sIndianDishes = [
     name: "Uttappa",
     cost: 15
   }
-
 ];
 
 const GujratiDishes = [
@@ -114,9 +103,8 @@ const GujratiDishes = [
     id: "18",
     name: "Khandvi Dhokla",
     cost: 15
-  },
+  }
 ];
-
 
 const RajasthaniDishes = [
   {
@@ -128,10 +116,8 @@ const RajasthaniDishes = [
     id: "20",
     name: "Samosa",
     cost: 10
-  },
+  }
 ];
-
-
 
 const FruitJuices = [
   {
@@ -153,26 +139,14 @@ const FruitJuices = [
     id: "24",
     name: "Pomgranate",
     cost: 10
-  },
+  }
 ];
 
-
- class MenuCard extends React.Component {
-state = {
-    selectedItems: [],
-  };
-
-
-  showModal = () => {
-    this.setState({ show: true });
-  };
-
-  hideModal = () => {
-    this.setState({ show: false });
-  };
+class MenuCard extends React.Component {
+  state = { selectedItems: [] };
 
   selectItem = item => {
-    const {  selectedItems } = this.state;
+    const { selectedItems } = this.state;
     const newItem = {
       ...item,
       quantity: 1
@@ -215,230 +189,245 @@ state = {
 
   render() {
     const { selectedItems } = this.state;
-    let close = () => this.setState({ show: false });
     return (
-      <div className="container">
-        <p>Welcome {this.props.name}! Pick your any Break-fast menu you want</p>
-        <Row>
-          <Col sm={8} xs={12}  >
-            <Col sm={4} xs={12}  >
-            <ul>
-              <h3>Morning Drinks </h3>
-
-              {MorningDrinks.map((item, i) => (
-                <li
-                  style={{ cursor: "pointer" }}
-                  key={i}
-                  onClick={() => this.selectItem(item)}
-                >
-                  {item.name} {item.cost} <i className="fa fa-inr"></i>
-                </li>
-              ))}
-            </ul>
-           </Col>
-           <Col sm={4} xs={12}  >
-            <ul>
-              <h3>Chocolate Drinks </h3>
-              {ChoclateDrinks.map((item, i) => (
-                <li
-                  style={{ cursor: "pointer" }}
-                  key={i}
-                  onClick={() => this.selectItem(item)}
-                >
-                  {item.name} {item.cost} <i className="fa fa-inr"></i>
-                </li>
-              ))}
-            </ul>
-             </Col>
-            <Col sm={4} xs={12} > 
-            <ul>
-              <h3>Maharashtra </h3>
-              {MaharashtraDishes.map((item, i) => (
-                <li
-                  style={{ cursor: "pointer" }}
-                  key={i}
-                  onClick={() => this.selectItem(item)}
-                >
-                  {item.name} {item.cost} <i className="fa fa-inr"></i>
-                </li>
-              ))}
-            </ul>
-            </Col>
-            <Col sm={4} xs={12}  >
-            <ul>
-              <h3>Gujrati </h3>
-              {GujratiDishes.map((item, i) => (
-                <li
-                  style={{ cursor: "pointer" }}
-                  key={i}
-                  onClick={() => this.selectItem(item)}
-                >
-                  {item.name} {item.cost} <i className="fa fa-inr"></i>
-                </li>
-              ))}
-            </ul>
-            </Col>
-            <Col sm={4} xs={12} >
-             <ul>
-              <h3>Rajasthani</h3>
-              {RajasthaniDishes.map((item, i) => (
-                <li
-                  style={{ cursor: "pointer" }}
-                  key={i}
-                  onClick={() => this.selectItem(item)}
-                >
-                  {item.name} {item.cost} <i className="fa fa-inr"></i>
-                </li>
-              ))}
-            </ul> 
-            </Col> 
-             <Col sm={4} xs={12} >
-             <ul>
-              <h3>South Indian</h3>
-              {sIndianDishes.map((item, i) => (
-                <li
-                  style={{ cursor: "pointer" }}
-                  key={i}
-                  onClick={() => this.selectItem(item)}
-                >
-                  {item.name} {item.cost} <i className="fa fa-inr"></i>
-                </li>
-              ))}
-            </ul> 
-            </Col>
-            <Col sm={4} xs={12} >
-             <ul>
-              <h3>Fruit Juices</h3>
-              {FruitJuices.map((item, i) => (
-                <li
-                  style={{ cursor: "pointer" }}
-                  key={i}
-                  onClick={() => this.selectItem(item)}
-                >
-                  {item.name} {item.cost} <i className="fa fa-inr"></i>
-                </li>
-              ))}
-            </ul> 
-            </Col>              
-          </Col>
-
-          <Col lg={4} md={6} sm={6} xs={12} >
-            
-              <h3>Your Menu </h3>
-                <Table responsive id="table">
-                  <thead>
-                    <tr>
-                      <th>Items</th>
-                      <th>Cost</th>
-                      <th>Quantity</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-              {selectedItems.map((item, i) => (
-                
-                <tr key={i}>
-                 <td>{item.name}</td>
-                 <td>{item.cost}&nbsp;<i className="fa fa-inr"></i></td>
-                 <td>{item.quantity}</td>
-                 <td><span onClick={() => this.deleteItem(i)}>cancel</span></td>                 
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-8">
+            <div className="row">
+              <div className="col-md-6">
+                <ul>
+                  <h3 className="text-center">Morning Drinks </h3>
+                  {MorningDrinks.map((item, i) => (
+                    <li
+                      style={{ cursor: "pointer" }}
+                      key={i}
+                      onClick={() => this.selectItem(item)}
+                    >
+                      {item.name} {item.cost} <i className="fa fa-inr" />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="col-md-6">
+                <ul>
+                  <h3>Fruit Juices</h3>
+                  {FruitJuices.map((item, i) => (
+                    <li
+                      style={{ cursor: "pointer" }}
+                      key={i}
+                      onClick={() => this.selectItem(item)}
+                    >
+                      {item.name} {item.cost} <i className="fa fa-inr" />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-6">
+                <ul>
+                  <h3>Maharashtra </h3>
+                  {MaharashtraDishes.map((item, i) => (
+                    <li
+                      style={{ cursor: "pointer" }}
+                      key={i}
+                      onClick={() => this.selectItem(item)}
+                    >
+                      {item.name} {item.cost} <i className="fa fa-inr" />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="col-md-6">
+                <ul>
+                  <h3>South Indian</h3>
+                  {sIndianDishes.map((item, i) => (
+                    <li
+                      style={{ cursor: "pointer" }}
+                      key={i}
+                      onClick={() => this.selectItem(item)}
+                    >
+                      {item.name} {item.cost} <i className="fa fa-inr" />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-6">
+                <ul>
+                  <h3>Rajasthani</h3>
+                  {RajasthaniDishes.map((item, i) => (
+                    <li
+                      style={{ cursor: "pointer" }}
+                      key={i}
+                      onClick={() => this.selectItem(item)}
+                    >
+                      {item.name} {item.cost} <i className="fa fa-inr" />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="col-md-6">
+                <ul>
+                  <h3>Gujrati </h3>
+                  {GujratiDishes.map((item, i) => (
+                    <li
+                      style={{ cursor: "pointer" }}
+                      key={i}
+                      onClick={() => this.selectItem(item)}
+                    >
+                      {item.name} {item.cost} <i className="fa fa-inr" />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-6">
+                <ul>
+                  <h3>Chocolate Drinks </h3>
+                  {ChoclateDrinks.map((item, i) => (
+                    <li
+                      style={{ cursor: "pointer" }}
+                      key={i}
+                      onClick={() => this.selectItem(item)}
+                    >
+                      {item.name} {item.cost} <i className="fa fa-inr"></i>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            <h3>Your Menu </h3>
+            <table className="responsive table">
+              <thead>
+                <tr>
+                  <th>Items</th>
+                  <th>Cost</th>
+                  <th>Quantity</th>
                 </tr>
-                
-              ))}
-                </tbody>
-              </Table>
-             
-            <Row>
-             <Col md={12} sm={4} xs={12}  className="total">
-              <h3>Total</h3>
+              </thead>
+              <tbody>
+                {selectedItems.map((item, i) => (
+                  <tr key={i}>
+                    <td>{item.name}</td>
+                    <td>
+                      {item.cost}&nbsp;<i className="fa fa-inr" />
+                    </td>
+                    <td>{item.quantity}</td>
+                    <td>
+                      <span onClick={() => this.deleteItem(i)}>cancel</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
+            <section className="col total">
+              <h3>Total</h3>
               {selectedItems.reduce(
                 (acc, item) => acc + item.cost * item.quantity,
                 0
               )}
-              &nbsp;<i className="fa fa-inr"></i>
-             </Col>
+              &nbsp;<i className="fa fa-inr" />
+            </section>
 
-               <Col md={6} sm={4}  xs={4} xsOffset={4} >
-            {this.state.selectedItems.length > 0 ? (
-                
-                <Button
+            <section className="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              {this.state.selectedItems.length > 0 ? (
+                <button
                   type="button"
-                  style={{ display: "block" }}
-                  onClick={this.showModal}
-                  className="confrim"
+                  className="confrim btn btn-default"
+                  data-toggle="modal"
+                  data-target="#Modal"
                 >
                   Confrim
-                </Button>
-             
-            ) : (
-              <Button type="button" style={{ display: "none" }} >
-                Confrim
-              </Button>
-            )}
-             </Col>
-          </Row>
-          
-          </Col>
-        </Row>
+                </button>
+              ) : (
+                  <button type="button" style={{ display: "none" }}>
+                    Confrim
+                </button>
+                )}
+            </section>
+          </div>
+        </div>
 
-        <Modal
-          show={this.state.show}
-          onHide={close}
-          dialogClassName="custom-modal"
+        <div
+          className="modal fade"
+          id="Modal"
+          tabIndex="-1"
+          role="dialog"
+          aria-labelledby="Modal"
+          aria-hidden="true"
         >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-lg " className="text-center">
-              Your order will served shrotly.Kindly pay cash only.Have a Great Morning !! 
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-          <Row>
-          <Col md={12} sm={12} xs={12}  >
-             <Table responsive>
-                  <thead>
-                    <tr>
-                      <th>Items</th>
-                      <th>Cost</th>
-                      <th>Quantity</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-              {selectedItems.map((item, i) => (
-                
-                <tr key={i} >
-                 <td style={{ color: "#000" }}>{item.name}</td>
-                 <td style={{ color: "#000" }}>{item.cost}&nbsp;<i className="fa fa-inr"></i></td>
-                 <td style={{ color: "#000" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.quantity}</td> 
-                </tr>
-                
-              ))}
-                </tbody>
-              </Table>
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  Your order will served shrotly.Kindly pay cash only.Have a
+                  Great Morning !!
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <section className="row">
+                  <section className="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <table className=" table-bordered responsive col col-sm-12 col-md-12 col-lg-12 col-xl-12" >
+                      <thead>
+                        <tr id="table">
+                          <th>Items</th>
+                          <th>Cost</th>
+                          <th>Quantity</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {selectedItems.map((item, i) => (
+                          <tr key={i}>
+                            <td style={{ color: "#000" }}>{item.name}</td>
+                            <td style={{ color: "#000" }}>
+                              {item.cost}&nbsp;<i className="fa fa-inr" />
+                            </td>
+                            <td style={{ color: "#000" }}>{item.quantity}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </section>
 
-            </Col>
-
-
-          {/*<Col xs={12} xsOffset={4} sm={4} md={6}>*/}
-            <Col md={12} mdOffset={5} sm={4} xs={12} xsOffset={4}>
-              <h3 className="totalModal">Total</h3>
-                &nbsp;&nbsp;&nbsp;
-            {selectedItems.reduce(
-                (acc, item) => acc + item.cost * item.quantity,
-                0 
-              )}
-              &nbsp;<i className="fa fa-inr"></i>
-          
-          </Col>
-          </Row>  
-
-        
-          </Modal.Body>
-           <Modal.Footer>
-           <Col md={6} mdOffset={5} sm={6} xs={12} xsOffset={4} >
-            <Button onClick={close} className='text-center closeModal'>Close</Button>
-            </Col>
-          </Modal.Footer>
-        </Modal>
+                  <section className="col col-sm-4 col-md-12 offset-md-4 col-lg-4 col-xl-4">
+                    <h3 className="totalModal">Total</h3>
+                    &nbsp;&nbsp;&nbsp;
+                    {selectedItems.reduce(
+                      (acc, item) => acc + item.cost * item.quantity,
+                      0
+                    )}
+                    &nbsp;<i className="fa fa-inr" />
+                  </section>
+                </section>
+              </div>
+              <div className="modal-footer">
+                <section className="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <button
+                    type="button"
+                    className="btn btn-secondary text-center mr-auto "
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
